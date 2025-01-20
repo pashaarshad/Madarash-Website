@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Madrasa Website</title>
+  
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  
+  <style>
+    /* General Styles */
+    html, body {
+      margin: 0;
+      padding: 0;
+       /* Prevent page movement */
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff; /* Light blue background */
+      color: #333;
+    }
+
+    
+    /* Navigation Bars */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #00796b; /* Green color */
+      color: #fff;
+    }
+
+    .nav-bar .left-content {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-bar .right-content a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-bar .right-content a i {
+      font-size: 10px; /* Small icon size */
+    }
+
+    .menu-bar {
+      background-color: #004d40; /* Darker green */
+      padding: 10px 20px;
+      color: #fff;
+    }
+
+    .menu-bar .menu {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .menu-bar .menu a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .menu-bar .menu a:hover {
+      background-color: #ffeb3b; /* Gold hover effect */
+      color: #000;
+    }
+
+    /* Swiper Slider */
+    .swiper-container {
+      width: 100%;
+      height: 60vh;
+      margin: 20px 0;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    @media only screen and (max-width: 768px) {
+  .nav-bar {
+    flex-wrap: wrap; /* Wrap navigation bar items on smaller screens */
+  }
+
+  .menu-bar .menu {
+    justify-content: space-around; /* Distribute menu items evenly */
+  }
+}
+
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #004d40;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- First Navigation Bar -->
+  <div class="nav-bar">
+    <div class="left-content">
+      <span>Bismillahirrahmanirrahim</span>
+    </div>
+    <div class="right-content">
+      <a href="https://maps.google.com" target="_blank">
+        <i class="fas fa-map-marker-alt"></i> Location
+      </a>
+      <a href="https://youtube.com" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+    </div>
+  </div>
+
+  <!-- Second Navigation Bar -->
+  <div class="nav-bar">
+    <div>
+      <h1>Logo & Madrasa Name</h1>
+    </div>
+    <div id="google_translate_element" class="translate-container"></div>
+  </div>
+
+  <!-- Third Navigation Bar -->
+  <div class="menu-bar">
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Courses</a>
+      <a href="#">Contact</a>
+    </div>
+    
+  </div>
+
+  <!-- Swiper Slider -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="imgs/a.jpg" alt="Image A"></div>
+      <div class="swiper-slide"><img src="imgs/b.jpg" alt="Image B"></div>
+      <div class="swiper-slide"><img src="imgs/c.jpg" alt="Image C"></div>
+      <div class="swiper-slide"><img src="imgs/d.jpg" alt="Image D"></div>
+      <div class="swiper-slide"><img src="imgs/e.jpg" alt="Image E"></div>
+      <div class="swiper-slide"><img src="imgs/f.jpg" alt="Image F"></div>
+    </div>
+    <!-- Pagination -->
+
+    <!-- Navigation Buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  
+ <!-- Third Section -->
+<div class="third-section" id="third-section">
+  <div class="info">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt ligula non magna tristique posuere.</p>
+    <p>Praesent euismod sapien vel ligula volutpat, quis efficitur lectus pharetra.</p>
+    <p>Nulla facilisi. Integer luctus felis a facilisis volutpat.</p>
+  </div>
+  
+  <div class="counters">
+    <div class="counter-box">
+      <span class="counter" id="students">0</span>
+      <p>Students Plus</p>
+    </div>
+    <div class="counter-box">
+      <span class="counter" id="teachers">0</span>
+      <p>Teachers Plus</p>
+    </div>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrolling only */
+  }
+
+  .third-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9; /* Light gray background */
+  }
+
+  .info {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .counters {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+  }
+
+  .counter-box {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .counter {
+    font-size: 48px;
+    font-weight: bold;
+    color: #00796b; /* Green color */
+  }
+
+  .counter-box p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #555;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  function animateCounter(id, target) {
+    let count = 0;
+    const speed = 10; // Speed of the animation
+    const increment = Math.ceil(target / 100); // Increment value
+
+    const counterElement = document.getElementById(id);
+
+    const interval = setInterval(() => {
+      count += increment;
+      if (count >= target) {
+        count = target;
+        clearInterval(interval);
+      }
+      counterElement.textContent = count.toLocaleString(); // Add commas for readability
+    }, speed);
+  }
+
+  // Use Intersection Observer to trigger the animation when the section is visible
+  document.addEventListener("DOMContentLoaded", () => {
+    const thirdSection = document.getElementById("third-section");
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCounter("students", 200); // Increment students to 200
+            animateCounter("teachers", 200); // Increment teachers to 200
+            observer.unobserve(thirdSection); // Stop observing after the animation starts
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
+
+    observer.observe(thirdSection);
+  });
+</script>
+
+
+
+
+
+<section class="student-achievements">
+    <h2>Our Successful Students</h2>
+    <div class="cards-container">
+      <!-- Card 1 -->
+      <div class="achievement-card" data-card="1">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="imgs/a.jpg" alt="Student 1" class="student-image">
+          </div>
+          <div class="card-back">
+            <div class="background-image"></div>
+            <div class="text-content">
+              <h3>Student 1 - Hafiz-e-Quran</h3>
+              <p>Achieved excellence in memorizing the Quran and became a Hafiz. A true inspiration for others.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="achievement-card" data-card="2">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="imgs/b.jpg" alt="Student 2" class="student-image">
+          </div>
+          <div class="card-back">
+            <div class="background-image"></div>
+            <div class="text-content">
+              <h3>Student 2 - Top Achiever</h3>
+              <p>Won multiple academic awards and became a top achiever in madrasa. A shining star.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="achievement-card" data-card="3">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="imgs/c.jpg" alt="Student 3" class="student-image">
+          </div>
+          <div class="card-back">
+            <div class="background-image"></div>
+            <div class="text-content">
+              <h3>Student 3 - Alim</h3>
+              <p>Completed advanced studies and became an Alim. Known for their deep knowledge of Islamic teachings.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+      
+      
+    /* Section Styling */
+    .student-achievements {
+      padding: 30px;
+      text-align: center;
+      background-color: #f0f8ff;
+    }
+  
+    .student-achievements h2 {
+      font-size: 2.5rem;
+      color: #00796b;
+      margin-bottom: 20px;
+    }
+  
+    .cards-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  
+    /* Card Styling */
+    .achievement-card {
+      width: 30%;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+  
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease;
+    }
+  
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .card-back {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transform: rotateY(180deg);
+      position: relative;
+    }
+  
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.4; /* Transparency for background image */
+      z-index: 1;
+    }
+  
+    .text-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 20px;
+    }
+  
+    .achievement-card:hover .card-inner,
+    .achievement-card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+    .achievement-card[data-card="1"] .card-back .background-image {
+      background-image: url('imgs/a.jpg');
+    }
+  
+    .achievement-card[data-card="2"] .card-back .background-image {
+      background-image: url('imgs/b.jpg');
+    }
+  
+    .achievement-card[data-card="3"] .card-back .background-image {
+      background-image: url('imgs/c.jpg');
+    }
+  
+    /* Active Card Flip */
+    .achievement-card.active .card-inner {
+      transform: rotateY(180deg);
+    }
+  
+    @media only screen and (max-width: 768px) {
+      .achievement-card {
+        width: 100%;
+      }
+    }
+    
+    .text-content {
+    position: relative;
+    z-index: 2;
+    color: black; /* Changed to black */
+    padding: 20px;
+  }
+  
+  </style>
+  
+  <script>
+    // Handle card flipping and reset logic
+    document.querySelectorAll(".achievement-card").forEach((card) => {
+      card.addEventListener("click", () => {
+        // Remove 'active' from other cards
+        document.querySelectorAll(".achievement-card").forEach((otherCard) => {
+          if (otherCard !== card) {
+            otherCard.classList.remove("active");
+          }
+        });
+  
+        // Toggle the clicked card
+        card.classList.toggle("active");
+      });
+    });
+  </script>
+
+
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Madrasa. All Rights Reserved.
+  </footer>
+
+  <!-- Swiper.js Script -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    });
+  </script>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,ur',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+  
+</body>
+</html>
